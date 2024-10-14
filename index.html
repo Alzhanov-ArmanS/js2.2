@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Задания</title>
+</head>
+<body>
+    <h1>Задания на JavaScript 2.2</h1>
+
+    <script>
+        // Задание 1: Переменные и типы данных
+        let name = "Иван";
+        let age = 25;
+        let city = "Москва";
+        console.log(typeof name); // string
+        console.log(typeof age); // number
+        console.log(typeof city); // string
+
+        // Задание 2: Конкатенация строк
+        let firstName = "Иван";
+        let lastName = "Иванов";
+        let fullName = firstName + " " + lastName;
+        console.log(fullName); // Иван Иванов
+
+        // Задание 3: Преобразование типов
+        let strNumber = "42";
+        let num = Number(strNumber);
+        console.log(Number.isInteger(num)); // true
+
+        // Задание 4: Методы строк
+        let text = "JavaScript is fun!";
+        let substring = text.substring(17, 20).toUpperCase();
+        console.log(substring); // FUN
+
+        // Задание 5: Шаблонные строки
+        let product = "яблоко";
+        let price = 100;
+        console.log(`Цена на ${product} составляет ${price} рублей.`); // Цена на яблоко составляет 100 рублей.
+
+        // Задание 6: Работа с числами
+        let floatNumber = 3.7;
+        let roundedNumber = Math.round(floatNumber);
+        console.log(roundedNumber); // 4
+
+        // Задание 7: Сравнение значений
+        let num1 = 10;
+        let num2 = 20;
+        let isNum1Greater = num1 > num2;
+        console.log(isNum1Greater); // false
+
+        // Задание 8: Написание литералов
+        let person = {
+            name: "Иван",
+            age: 25,
+            favoriteColor: "синий"
+        };
+        console.log(person); // { name: 'Иван', age: 25, favoriteColor: 'синий' }
+
+        // Задание 9: Методы чисел
+        let decimalNumber = 3.14159;
+        let roundedDecimal = decimalNumber.toFixed(2);
+        console.log(roundedDecimal); // 3.14
+
+        // Задание 10: Преобразование строки в массив
+        let fruitString = "apple, orange, banana";
+        let fruitArray = fruitString.split(", ");
+        console.log(fruitArray); // ['apple', 'orange', 'banana']
+
+        // Задание 11: Проверка на NaN
+        let invalidOperation = "string" / 2;
+        let isNan = isNaN(invalidOperation);
+        console.log(isNan); // true
+
+        // Задание 12: Многострочный текст
+        let multiLineText = `Это первая строка.
+        Это вторая строка.
+        Это третья строка.`;
+        console.log(multiLineText);
+
+        // Задание 13: Преобразование данных
+        let boolValue = true;
+        let strValue = String(boolValue);
+        console.log(typeof strValue); // string
+
+        // Задание 14: Использование Symbol
+        const id = Symbol("id");
+        let obj = {
+            [id]: 1,
+            name: "Иван"
+        };
+        console.log(obj); // { [Symbol(id)]: 1, name: 'Иван' }
+
+        // Задание 15: Работа с массивом
+        let numbersArray = [1, 2, 3, 4, 5];
+        let length = numbersArray.length;
+        console.log(length); // 5
+
+        // Функции из предыдущего задания
+        function greet(name) {
+            console.log(`Привет, ${name}!`);
+        }
+
+        let multiply = function (a, b) {
+            return a * b;
+        };
+
+        (function () {
+            console.log("Анонимная функция вызвана!");
+        })();
+
+        (function () {
+            console.log("IIFE выполнена");
+        })();
+
+        function outer() {
+            function inner() {
+                return "Внутренняя функция";
+            }
+            return inner();
+        }
+
+        let personObj = {
+            name: "Иван",
+            sayName: function () {
+                console.log(this.name);
+            }
+        };
+
+        let boundSayName = personObj.sayName.bind(personObj);
+        boundSayName(); // Иван
+
+        function counter() {
+            let count = 0;
+            return function () {
+                count++;
+                console.log(count);
+            };
+        }
+
+        let count = counter();
+        count(); // 1
+        count(); // 2
+
+        function execute(func, a, b) {
+            console.log(func(a, b));
+        }
+        
+        execute(multiply, 2, 5); // 10
+    </script>
+</body>
+</html>
